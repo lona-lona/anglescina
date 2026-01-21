@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sl">
 <head>
@@ -30,20 +29,7 @@
         .progres-bar { height: 10px; background: #e0e0e0; border-radius: 5px; margin-top: 10px; overflow: hidden; }
         .progres-polnilo { height: 100%; background: #27ae60; transition: width 0.5s; }
         #ploskanje { font-size: 5em; display: block; margin: 10px 0; }
-        
-        /* Nov stil za lepši izpis namiga */
-        #namig-tekst { 
-            letter-spacing: 2px; 
-            font-family: monospace; 
-            font-size: 1.2em; 
-            font-weight: bold;
-            color: #2d5a2d;
-            background: #e8f5e8;
-            padding: 10px;
-            border-radius: 8px;
-            display: inline-block;
-            margin-top: 10px;
-        }
+        #namig-tekst { letter-spacing: 2px; font-family: monospace; font-size: 1.2em; font-weight: bold; color: #2d5a2d; background: #e8f5e8; padding: 10px; border-radius: 8px; display: inline-block; margin-top: 10px; }
         .lovec-besed { color: #e67e22; font-weight: bold; letter-spacing: 0px; margin: 0 10px; }
     </style>
 </head>
@@ -83,48 +69,50 @@
         const pohvale = ["Bravo Drejc!", "Dobro ti gre!", "Woohooo obvladaš!", "Se že pozna da vadiš!", "Great job!", "Car! Vedno bolje.", "Vaja dela super mojstra!", "Razturaš!", "Kmalu boš pravi Anglež!"];
 
         const emojiMapa = {
-            "BRUSH TEETH": "🪥", "CYCLE": "🚲", "GET DRESSED": "👕", "GO TO BED": "🛌", "HAVE A SHOWER": "🚿",
-            "ARMCHAIR": "🪑", "BIRDCAGE": "🦜", "BISCUIT TIN": "🍪", "BOOKSHELF": "📚", "COAT": "🧥", 
-            "CRASH HELMET": "🪖", "CUPBOARD": "🗄️", "CUPS": "☕", "DRAWER": "📂", "FISH-TANK": "🐠", 
-            "GLOBE": "🌍", "HAIR-DRIER": "💨", "PLANT": "🪴", "RACKET": "🎾", "SUITCASE": "🧳", 
-            "THE EARTH": "🌎", "TRAINERS": "👟", "WARDROBE": "👗", "WASTE-PAPER BASKET": "🗑️", "WORKOUT MAT": "🧘",
-            "BEACH": "🏖️", "BEARD": "🧔", "COMIC BOOK": "📚", "GARDEN GNOME": "🍄", "LIBRARY": "🏛️", 
-            "SAND": "🏖️", "TYPEWRITER": "⌨️", "STAMPS": "🧧", "SHELLS": "🐚", "DOLLS": "🪆", 
-            "POSTCARDS": "📮", "BADGES": "🏅", "STICKERS": "🏷️", "COINS": "🪙", "PENS": "🖊️", 
-            "BUTTONS": "🔘", "KEY RINGS": "🔑", "WATCH TV": "📺", "READ A BOOK": "📖", "COOKER": "🍳",
-            "SINK": "🚰", "CEILING": "🏠", "WALL": "🧱"
+            "BRUSH TEETH": "🧼", "BRUSH MY TEETH": "🧼", "CYCLE": "🚲", "GET DRESSED": "👕", "GO TO BED": "🛌", "HAVE A SHOWER": "🚿",
+            "AN ARMCHAIR": "🪑", "A BIRDCAGE": "🦜", "A BISCUIT TIN": "🍪", "A BOOKSHELF": "📚", "A COAT": "🧥", 
+            "A CRASH HELMET": "⛑️", "A CUPBOARD": "🗄️", "CUPS": "☕", "A DRAWER": "📂", "A FISH-TANK": "🐠", 
+            "A GLOBE": "🌍", "A HAIR-DRIER": "💨", "A PLANT": "🌿", "A RACKET": "🎾", "A SUITCASE": "💼", 
+            "THE EARTH": "🌎", "TRAINERS": "👟", "A WARDROBE": "👗", "A WASTE-PAPER BASKET": "🗑️", "A WORKOUT MAT": "🧘",
+            "A BEACH": "🏖️", "A BEARD": "🧔", "A COMIC BOOK": "📚", "A GARDEN GNOME": "🍄", "GARDEN GNOMES": "🍄", "A LIBRARY": "🏛️", 
+            "SAND": "🏖️", "A TYPEWRITER": "⌨️", "STAMPS": "✉️", "COLLECT STAMPS": "✉️", "SHELLS": "🐚", "DOLLS": "👧", 
+            "POSTCARDS": "📮", "BADGES": "🏅", "COLLECT BADGES": "🏅", "STICKERS": "🏷️", "COLLECT STICKERS": "🏷️", 
+            "COINS": "💰", "COLLECT COINS": "💰", "PENS": "🖊️", "BUTTONS": "🔘", "KEY RINGS": "🔑", "KEYRINGS": "🔑",
+            "WATCH TV": "📺", "READ A BOOK": "📖", "A COOKER": "🍳", "A SINK": "🚰", "A CEILING": "🏠", "A WALL": "🏠", 
+            "A SNOWFLAKE": "❄️", "A SNOWMAN": "☃️", "A GINGERBREAD MAN": "🍪", "A GIFT": "🎁", "REINDEER": "🦌", 
+            "A REINDEER": "🦌", "A SLEIGH": "🛷", "PINBALL MACHINES": "🕹️", "PIG FIGURINES": "🐷", "STINGING NETTLES": "ajsi 🌿"
         };
 
         const osnovniPodatki = {
-            "Anna's typical day": [{slo: "PO", ang: "AFTER"},{slo: "VEDNO", ang: "ALWAYS"},{slo: "PRED", ang: "BEFORE"},{slo: "OBNAŠATI SE", ang: "BEHAVE"},{slo: "GRISTI SI NOHTE", ang: "BITE NAILS"},{slo: "UMIVATI SI ZOBE", ang: "BRUSH TEETH"},{slo: "KLEPETATI S PRIJATELJI", ang: "CHAT WITH FRIENDS"},{slo: "KOLESARITI", ang: "CYCLE"},{slo: "ZGODAJ", ang: "EARLY"},{slo: "ZGODNJA PTICA", ang: "EARLY BIRD"},{slo: "ZBEŽATI", ang: "ESCAPE"},{slo: "HRANITI", ang: "FEED"},{slo: "OBLEČI SE", ang: "GET DRESSED"},{slo: "USTATI", ang: "GET UP"},{slo: "ITI V POSTELJO", ang: "GO TO BED"},{slo: "ITI SPAT", ang: "GO TO SLEEP"},{slo: "SKORAJ NIKOLI", ang: "HARDLY EVER"},{slo: "TUŠIRATI SE", ang: "HAVE A SHOWER"},{slo: "IMETI VEČERJO/VEČERJATI", ang: "HAVE DINNER"},{slo: "OBJETI", ang: "HUG"},{slo: "ZAPUSTITI DOM", ang: "LEAVE HOME"},{slo: "POLNOČ", ang: "MIDNIGHT"},{slo: "NIKOLI", ang: "NEVER"},{slo: "NOČNA PTICA", ang: "NIGHT OWL"},{slo: "POGOSTO", ang: "OFTEN"},{slo: "PAKIRANO KOSILO", ang: "PACKED LUNCH"},{slo: "STRUPEN", ang: "POISONOUS"},{slo: "HITER", ang: "QUICK"},{slo: "REDKO", ang: "RARELY"},{slo: "ŠOLSKA MENZA", ang: "SCHOOL CANTEEN"},{slo: "VČASIH", ang: "SOMETIMES"},{slo: "GOVORITI RESNICO", ang: "TELL TRUTH"},{slo: "PISATI SPOROČILO PRIJATELJEM", ang: "TEXT FRIENDS"},{slo: "POTEM", ang: "THEN"},{slo: "POD ZEMLJO", ang: "UNDERGROUND"},{slo: "OBIČAJNO", ang: "USUALLY"},{slo: "ZBUDITI SE", ang: "WAKE UP"},{slo: "BREZ", ang: "WITHOUT"},{slo: "TELOVADITI", ang: "WORK OUT"},{slo: "ZASPATI", ang: "FALL A SLEEP"},{slo: "ZAJTRK", ang: "BREAKFAST"},{slo: "KOSILO", ang: "LUNCH"},{slo: "ZAJTRK IN KOSILO OBENEM", ang: "BRUNCH"},{slo: "SPROSTITI SE", ang: "TO RELAX"},{slo: "V SPODNJEM NADSTROPJU", ang: "DOWNSTAIRS"},{slo: "ČETRTINA", ang: "QUARTER"},{slo: "OBLEČI SE", ang: "TO GET DRESS"},{slo: "NAŠEMITI SE ZA PUSTA", ang: "TO DRESS UP"},{slo: "DELATI DOMAČO NALOGO", ang: "DO HOMEWORK"},{slo: "POSLUŠATI GLASBO", ang: "LISTEN TO MUSIC"},{slo: "KONEC POUKA", ang: "THE END OF SCHOOL DAY"},{slo: "KONEC", ang: "THE END"},{slo: "GLEDATI TV", ang: "WATCH TV"},{slo: "BRATI KNJIGO", ang: "READ A BOOK"},{slo: "PRIPRAVITI ŠOLSKO TORBO", ang: "PACK MY SCHOOL BAG"},{slo: "IMETI NOGOMETNI TRENING", ang: "HAVE FOOTBAL PRACTICE"}],
-            "Linda's calculator": [{slo: "NAD", ang: "ABOVE"},{slo: "NASLANJAČ", ang: "ARMCHAIR"},{slo: "ZA", ang: "BEHIND"},{slo: "MED", ang: "BETWEEN"},{slo: "KLETKA ZA PTICE", ang: "BIRDCAGE"},{slo: "ŠKATLA S PIŠKOTI", ang: "BISCUIT TIN"},{slo: "KNJIŽNA POLICA", ang: "BOOKSHELF"},{slo: "PLAŠČ", ang: "COAT"},{slo: "ALI BI LAHKO?", ang: "COULD YOU?"},{slo: "ČELADA", ang: "CRASH HELMET"},{slo: "CRKLJATI SE", ang: "CUDDLE"},{slo: "OMARICA", ang: "CUPBOARD"},{slo: "LONČKI", ang: "CUPS"},{slo: "PREDALNIK", ang: "DRAWER"},{slo: "RAZISKOVATI", ang: "EXPLORE"},{slo: "AKVARIJ", ang: "FISH-TANK"},{slo: "TLA", ang: "FLOOR"},{slo: "GALAKSIJA", ang: "GALAXY"},{slo: "GLOBUS", ang: "GLOBE"},{slo: "FEN", ang: "HAIR-DRIER"},{slo: "POGLEDATI", ang: "HAVE A LOOK"},{slo: "POHOD", ang: "HIKE"},{slo: "PRED", ang: "IN FRONT OF"},{slo: "BLIZU", ang: "NEAR"},{slo: "ZRAVEN / POLEG / TIK OB", ang: "NEXT TO"},{slo: "OPAZITI", ang: "NOTICE"},{slo: "ZUNAJ", ang: "OUTSIDE"},{slo: "MESTO", ang: "PLACE"},{slo: "ROŽA V LONČKU", ang: "PLANT"},{slo: "LOPAR", ang: "RACKET"},{slo: "POČIVALNIK", ang: "RESTING CHAIR"},{slo: "GEO TRIKOTNIK", ang: "SET SQUARE"},{slo: "KOVČEK", ang: "SUITCASE"},{slo: "ZEMLJA", ang: "THE EARTH"},{slo: "SUPERGE", ang: "TRAINERS"},{slo: "POD", ang: "UNDER"},{slo: "OMARA", ang: "WARDROBE"},{slo: "KOŠ ZA SMETI", ang: "WASTE-PAPER BASKET"},{slo: "KAKŠNO OLAJŠANJE!", ang: "WHAT A RELIEF"},{slo: "PODLOGA ZA TELOVADBO", ang: "WORKOUT MAT"}],
-            "Collections": [{slo: "VSE VRSTE", ang: "ALL SORTS"},{slo: "SPATI", ang: "ASLEEP"},{slo: "PLAŽA", ang: "BEACH"},{slo: "BRADA (KOSMATA)", ang: "BEARD"},{slo: "LOVITI", ang: "CHASE"},{slo: "PLEZATI", ang: "CLIMB"},{slo: "STRIP", ang: "COMIC BOOK"},{slo: "JOKATI / VZKLIKNITI", ang: "CRY"},{slo: "PRIJETNO", ang: "ENJOYABLE"},{slo: "ŠE POSEBEJ, ŠE ZLASTI", ang: "ESPECIALLY"},{slo: "OGRAJA", ang: "FENCE"},{slo: "FIGURICA", ang: "FIGURINE"},{slo: "ZA OKRAS", ang: "FOR DECORATION"},{slo: "MAGNET ZA HLADILNIK", ang: "FRIDGE MAGNET"},{slo: "VRTNI PALČEK / ŠKRAT", ang: "GARDEN GNOME"},{slo: "JEZIK", ang: "LANGUAGE"},{slo: "KNJIŽNICA", ang: "LIBRARY"},{slo: "MOŠKI", ang: "MALE"},{slo: "DREMATI, KINKATI", ang: "NAP"},{slo: "NOČNA MORA", ang: "NIGHTMARE"},{slo: "FLIPER", ang: "PINBALL MACHINE"},{slo: "PRIJETEN", ang: "PLEASANT"},{slo: "ŠPIČAST / KONIČAST KLOBUK", ang: "POINTY HAT"},{slo: "PRVO BERILO / ČITANKA", ang: "PRIMER"},{slo: "VAROVATI", ang: "PROTECT"},{slo: "SPRAVITI NEKOGA V DOBRO VOLJO", ang: "PUT SOMEBODY IN A GOOD MOOD"},{slo: "PESEK", ang: "SAND"},{slo: "ŠOLSKO IGRIŠČO", ang: "SCHOOL PLAYGROUND"},{slo: "KADITI PIPO", ang: "SMOKE A PIPE"},{slo: "KOPRIVA", ang: "STINGING NETTLE"},{slo: "VREČKA SLADKORJA", ang: "SUGAR PACKET"},{slo: "PRESENEČENJE", ang: "SURPRISE"},{slo: "ŠVEDSKA PISATELJICA", ang: "SWEDISH WRITER"},{slo: "PREVOD", ang: "TRANSLATION"},{slo: "PISALNI STROJ", ang: "TYPEWRITER"},{slo: "NENAVADEN", ang: "UNUSUAL"},{slo: "OBIČAJNO", ang: "USUALLY"},{slo: "OBISKOVALEC", ang: "VISITOR"},{slo: "NAJVEČJI NA SVETU", ang: "WORLD'S LARGEST"}],
-            "Linda and I like different things": [{slo: "MNOŽICA LJUDI", ang: "A CROWD"},{slo: "HRUPEN PROSTOR", ang: "A NOISY PLACE"},{slo: "PELJATI PSA NA SPREHOD", ang: "TAKE A DOLG FOR A WALK"},{slo: "KRASNO,ODLIČNO", ang: "TERRIFIC"},{slo: "OBA", ang: "BOTH"},{slo: "KREDA", ang: "CHALK"},{slo: "BITI RAZLIČEN KOT NOČ IN DAN", ang: "TO BE DIFFERENT AS CHALK AND CHEESE"},{slo: "DRUŽITI SE", ang: "HANG OUT"}],
-            "House": [{slo: "KOT", ang: "A CORNER"},{slo: "STROP", ang: "CEILING"},{slo: "STENA", ang: "A WALL"},{slo: "OKENSKA POLICA", ang: "A WINDOW SILL"},{slo: "UMIVALNIK", ang: "A SINK"},{slo: "PETI", ang: "SING"},{slo: "ŠTEDILNIK", ang: "A COOKER"},{slo: "IGRATI SE / IGRATI NA", ang: "PLAY"},{slo: "ZBIRATI", ang: "COLLECT"},{slo: "BRATI", ang: "READ"}],
+            "Anna's typical day": [{slo: "PO", ang: "AFTER"},{slo: "VEDNO", ang: "ALWAYS"},{slo: "PRED", ang: "BEFORE"},{slo: "OBNAŠATI SE", ang: "BEHAVE"},{slo: "GRISTI SI NOHTE", ang: "BITE NAILS"},{slo: "UMIVATI SI ZOBE", ang: "BRUSH TEETH"},{slo: "KLEPETATI S PRIJATELJI", ang: "CHAT WITH FRIENDS"},{slo: "KOLESARITI", ang: "CYCLE"},{slo: "ZGODAJ", ang: "EARLY"},{slo: "ZGODNJA PTICA", ang: "AN EARLY BIRD"},{slo: "ZBEŽATI", ang: "ESCAPE"},{slo: "HRANITI", ang: "FEED"},{slo: "OBLEČI SE", ang: "GET DRESSED"},{slo: "USTATI", ang: "GET UP"},{slo: "ITI V POSTELJO", ang: "GO TO BED"},{slo: "ITI SPAT", ang: "GO TO SLEEP"},{slo: "SKORAJ NIKOLI", ang: "HARDLY EVER"},{slo: "TUŠIRATI SE", ang: "HAVE A SHOWER"},{slo: "IMETI VEČERJO/VEČERJATI", ang: "HAVE DINNER"},{slo: "OBJETI", ang: "HUG"},{slo: "ZAPUSTITI DOM", ang: "LEAVE HOME"},{slo: "POLNOČ", ang: "MIDNIGHT"},{slo: "NIKOLI", ang: "NEVER"},{slo: "NOČNA PTICA", ang: "A NIGHT OWL"},{slo: "POGOSTO", ang: "OFTEN"},{slo: "PAKIRANO KOSILO", ang: "A PACKED LUNCH"},{slo: "STRUPEN", ang: "POISONOUS"},{slo: "HITER", ang: "QUICK"},{slo: "REDKO", ang: "RARELY"},{slo: "ŠOLSKA MENZA", ang: "A SCHOOL CANTEEN"},{slo: "VČASIH", ang: "SOMETIMES"},{slo: "GOVORITI RESNICO", ang: "TELL THE TRUTH"},{slo: "PISATI SPOROČILO PRIJATELJEM", ang: "TEXT FRIENDS"},{slo: "POTEM", ang: "THEN"},{slo: "POD ZEMLJO", ang: "UNDERGROUND"},{slo: "OBIČAJNO", ang: "USUALLY"},{slo: "ZBUDITI SE", ang: "WAKE UP"},{slo: "BREZ", ang: "WITHOUT"},{slo: "TELOVADITI", ang: "WORK OUT"},{slo: "ZASPATI", ang: "FALL ASLEEP"},{slo: "ZAJTRK", ang: "BREAKFAST"},{slo: "KOSILO", ang: "LUNCH"},{slo: "ZAJTRK IN KOSILO OBENEM", ang: "BRUNCH"},{slo: "SPROSTITI SE", ang: "TO RELAX"},{slo: "V SPODNJEM NADSTROPJU", ang: "DOWNSTAIRS"},{slo: "ČETRTINA", ang: "A QUARTER"},{slo: "NAŠEMITI SE ZA PUSTA", ang: "TO DRESS UP"},{slo: "DELATI DOMAČO NALOGO", ang: "DO HOMEWORK"},{slo: "POSLUŠATI GLASBO", ang: "LISTEN TO MUSIC"},{slo: "KONEC POUKA", ang: "THE END OF THE SCHOOL DAY"},{slo: "KONEC", ang: "THE END"},{slo: "GLEDATI TV", ang: "WATCH TV"},{slo: "BRATI KNJIGO", ang: "READ A BOOK"},{slo: "PRIPRAVITI ŠOLSKO TORBO", ang: "PACK MY SCHOOL BAG"},{slo: "IMETI NOGOMETNI TRENING", ang: "HAVE FOOTBALL PRACTICE"}],
+            "Linda's calculator": [{slo: "NAD", ang: "ABOVE"},{slo: "NASLANJAČ", ang: "AN ARMCHAIR"},{slo: "ZA", ang: "BEHIND"},{slo: "MED", ang: "BETWEEN"},{slo: "KLETKA ZA PTICE", ang: "A BIRDCAGE"},{slo: "ŠKATLA S PIŠKOTI", ang: "A BISCUIT TIN"},{slo: "KNJIŽNA POLICA", ang: "A BOOKSHELF"},{slo: "PLAŠČ", ang: "A COAT"},{slo: "ALI BI LAHKO?", ang: "COULD YOU?"},{slo: "ČELADA", ang: "A CRASH HELMET"},{slo: "CRKLJATI SE", ang: "CUDDLE"},{slo: "OMARICA", ang: "A CUPBOARD"},{slo: "LONČKI", ang: "CUPS"},{slo: "PREDALNIK", ang: "A DRAWER"},{slo: "RAZISKOVATI", ang: "EXPLORE"},{slo: "AKVARIJ", ang: "A FISH-TANK"},{slo: "TLA", ang: "THE FLOOR"},{slo: "GALAKSIJA", ang: "A GALAXY"},{slo: "GLOBUS", ang: "A GLOBE"},{slo: "FEN", ang: "A HAIR-DRIER"},{slo: "POGLEDATI", ang: "HAVE A LOOK"},{slo: "POHOD", ang: "A HIKE"},{slo: "PRED", ang: "IN FRONT OF"},{slo: "BLIZU", ang: "NEAR"},{slo: "ZRAVEN / POLEG / TIK OB", ang: "NEXT TO"},{slo: "OPAZITI", ang: "NOTICE"},{slo: "ZUNAJ", ang: "OUTSIDE"},{slo: "MESTO", ang: "A PLACE"},{slo: "ROŽA V LONČKU", ang: "A PLANT"},{slo: "LOPAR", ang: "A RACKET"},{slo: "POČIVALNIK", ang: "A RESTING CHAIR"},{slo: "GEO TRIKOTNIK", ang: "A SET SQUARE"},{slo: "KOVČEK", ang: "A SUITCASE"},{slo: "ZEMLJA", ang: "THE EARTH"},{slo: "SUPERGE", ang: "TRAINERS"},{slo: "POD", ang: "UNDER"},{slo: "OMARA", ang: "A WARDROBE"},{slo: "KOŠ ZA SMETI", ang: "A WASTE-PAPER BASKET"},{slo: "KAKŠNO OLAJŠANJE!", ang: "WHAT A RELIEF"},{slo: "PODLOGA ZA TELOVADBO", ang: "A WORKOUT MAT"}],
+            "Collections": [{slo: "VSE VRSTE", ang: "ALL SORTS"},{slo: "SPATI", ang: "ASLEEP"},{slo: "PLAŽA", ang: "A BEACH"},{slo: "BRADA (KOSMATA)", ang: "A BEARD"},{slo: "LOVITI", ang: "CHASE"},{slo: "PLEZATI", ang: "CLIMB"},{slo: "STRIP", ang: "A COMIC BOOK"},{slo: "JOKATI / VZKLIKNITI", ang: "CRY"},{slo: "PRIJETNO", ang: "ENJOYABLE"},{slo: "ŠE POSEBEJ, ŠE ZLASTI", ang: "ESPECIALLY"},{slo: "OGRAJA", ang: "A FENCE"},{slo: "FIGURICA", ang: "A FIGURINE"},{slo: "ZA OKRAS", ang: "FOR DECORATION"},{slo: "MAGNET ZA HLADILNIK", ang: "A FRIDGE MAGNET"},{slo: "VRTNI PALČEK / ŠKRAT", ang: "A GARDEN GNOME"},{slo: "JEZIK", ang: "A LANGUAGE"},{slo: "KNJIŽNICA", ang: "A LIBRARY"},{slo: "MOŠKI", ang: "A MALE"},{slo: "DREMATI, KINKATI", ang: "NAP"},{slo: "NOČNA MORA", ang: "A NIGHTMARE"},{slo: "FLIPER", ang: "A PINBALL MACHINE"},{slo: "PRIJETEN", ang: "PLEASANT"},{slo: "ŠPIČAST / KONIČAST KLOBUK", ang: "A POINTY HAT"},{slo: "PRVO BERILO / ČITANKA", ang: "A PRIMER"},{slo: "VAROVATI", ang: "PROTECT"},{slo: "SPRAVITI NEKOGA V DOBRO VOLJO", ang: "PUT SOMEBODY IN A GOOD MOOD"},{slo: "PESEK", ang: "SAND"},{slo: "ŠOLSKO IGRIŠČO", ang: "A SCHOOL PLAYGROUND"},{slo: "KADITI PIPO", ang: "SMOKE A PIPE"},{slo: "KOPRIVA", ang: "A STINGING NETTLE"},{slo: "VREČKA SLADKORJA", ang: "A SUGAR PACKET"},{slo: "PRESENEČENJE", ang: "A SURPRISE"},{slo: "ŠVEDSKA PISATELJICA", ang: "A SWEDISH WRITER"},{slo: "PREVOD", ang: "A TRANSLATION"},{slo: "PISALNI STROJ", ang: "A TYPEWRITER"},{slo: "NENAVADEN", ang: "UNUSUAL"},{slo: "OBIČAJNO", ang: "USUALLY"},{slo: "OBISKOVALEC", ang: "A VISITOR"},{slo: "NAJVEČJI NA SVETU", ang: "THE WORLD'S LARGEST"}],
+            "Linda and I like different things": [{slo: "MNOŽICA LJUDI", ang: "A CROWD"},{slo: "HRUPEN PROSTOR", ang: "A NOISY PLACE"},{slo: "PELJATI PSA NA SPREHOD", ang: "TAKE A DOG FOR A WALK"},{slo: "KRASNO,ODLIČNO", ang: "TERRIFIC"},{slo: "OBA", ang: "BOTH"},{slo: "KREDA", ang: "CHALK"},{slo: "BITI RAZLIČEN KOT NOČ IN DAN", ang: "TO BE DIFFERENT AS CHALK AND CHEESE"},{slo: "DRUŽITI SE", ang: "HANG OUT"}],
+            "House": [{slo: "KOT", ang: "A CORNER"},{slo: "STROP", ang: "A CEILING"},{slo: "STENA", ang: "A WALL"},{slo: "OKENSKA POLICA", ang: "A WINDOW SILL"},{slo: "UMIVALNIK", ang: "A SINK"},{slo: "PETI", ang: "SING"},{slo: "ŠTEDILNIK", ang: "A COOKER"},{slo: "IGRATI SE / IGRATI NA", ang: "PLAY"},{slo: "ZBIRATI", ang: "COLLECT"},{slo: "BRATI", ang: "READ"}],
             "Prepositions of place": [{slo: "NA", ang: "ON"},{slo: "V", ang: "IN"},{slo: "POD", ang: "UNDER"},{slo: "ZA", ang: "BEHIND"},{slo: "NAD", ang: "ABOVE"},{slo: "MED / VMES", ang: "BETWEEN"},{slo: "PRED", ang: "IN FRONT OF"},{slo: "POLEG / TIK OB", ang: "NEXT TO"},{slo: "BLIZU", ang: "NEAR"}],
             "Part of the day": [{slo: "ZJUTRAJ / DOPOLDNE", ang: "IN THE MORNING"},{slo: "POPOLDNE", ang: "IN THE AFTERNOON"},{slo: "ZVEČER", ang: "IN THE EVENING"},{slo: "PONOČI", ang: "AT NIGHT"}],
-            "My life after school": [{slo: "IGRATI KOŠARKO", ang: "PLAY BASKETBALL"},{slo: "IGRATI NOGOMET", ang: "PLAY FOOTBAL"},{slo: "IGRATI TENIS", ang: "PLAY TENNIS"},{slo: "IGRATI PINKPONK", ang: "PLAY TABLE TENNIS"},{slo: "IGRATI HOKEJ", ang: "PLAY ICE HOCKEY"},{slo: "IGRATI ŠAH", ang: "PLAY CHESS"},{slo: "IGRATI RAČUNALNIŠKE IGRICE", ang: "PLAY COMPUTER GAMES"},{slo: "ZBIRATI OBESKE ZA KLJUČE", ang: "COLLECT KEYRINGS"},{slo: "ZBIRATI NALEPKE", ang: "COLLECT STICKERS"},{slo: "ZBIRATI ZNAMKE", ang: "COLLECT STAMPS"},{slo: "ZBIRATI KOVANCE", ang: "COLLECT COINS"},{slo: "ZBIRATI ZNAČKE/PRIPONKE", ang: "COLLECT BADGES"},{slo: "ZBIRATI NARODNE LUTKE", ang: "COLLECT NATIONAL DOLLS"},{slo: "BRATI KNJIGE", ang: "READ BOOKS"},{slo: "BRATI REVIJE", ang: "READ MAGAZINES"},{slo: "BRATI STRIPE", ang: "READ STRIPS"},{slo: "IGRATI NA KLAVIR", ang: "PLAY THE PIANO"},{slo: "IGRATI NA VIOLINO", ang: "PLAY THE VIOLIN"},{slo: "IGRATI NA KITARO", ang: "PLAY THE GUITAR"},{slo: "ITI SMUČATI", ang: "GO SKIING"},{slo: "ITI PLAVATI", ang: "GO SWIMMING"},{slo: "ITI KOLESARITI", ang: "GO CYCLING"},{slo: "ITI JADRATI", ang: "GO SAILING"},{slo: " VOZITI SE S KANUJEM", ang: "GO CANOEING"}],
+            "My life after school": [{slo: "IGRATI KOŠARKO", ang: "PLAY BASKETBALL"},{slo: "IGRATI NOGOMET", ang: "PLAY FOOTBALL"},{slo: "IGRATI TENIS", ang: "PLAY TENNIS"},{slo: "IGRATI PINKPONK", ang: "PLAY TABLE TENNIS"},{slo: "IGRATI HOKEJ", ang: "PLAY ICE HOCKEY"},{slo: "IGRATI ŠAH", ang: "PLAY CHESS"},{slo: "IGRATI RAČUNALNIŠKE IGRICE", ang: "PLAY COMPUTER GAMES"},{slo: "ZBIRATI OBESKE ZA KLJUČE", ang: "COLLECT KEYRINGS"},{slo: "ZBIRATI NALEPKE", ang: "COLLECT STICKERS"},{slo: "ZBIRATI ZNAMKE", ang: "COLLECT STAMPS"},{slo: "ZBIRATI KOVANCE", ang: "COLLECT COINS"},{slo: "ZBIRATI ZNAČKE/PRIPONKE", ang: "COLLECT BADGES"},{slo: "ZBIRATI NARODNE LUTKE", ang: "COLLECT NATIONAL DOLLS"},{slo: "BRATI KNJIGE", ang: "READ BOOKS"},{slo: "BRATI REVIJE", ang: "READ MAGAZINES"},{slo: "BRATI STRIPE", ang: "READ STRIPS"},{slo: "IGRATI NA KLAVIR", ang: "PLAY THE PIANO"},{slo: "IGRATI NA VIOLINO", ang: "PLAY THE VIOLIN"},{slo: "IGRATI NA KITARO", ang: "PLAY THE GUITAR"},{slo: "ITI SMUČATI", ang: "GO SKIING"},{slo: "ITI PLAVATI", ang: "GO SWIMMING"},{slo: "ITI KOLESARITI", ang: "GO CYCLING"},{slo: "ITI JADRATI", ang: "GO SAILING"},{slo: " VOZITI SE S KANUJEM", ang: "GO CANOEING"}],
             "How often?": [{slo: "VEDNO", ang: "ALWAYS"},{slo: "ENKRAT V DNEVU", ang: "ONCE A DAY"},{slo: "DVAKRAT V DNEVU", ang: "TWICE A DAY"},{slo: "TRIKRAT V DNEVU", ang: "THREE TIMES A DAY"},{slo: "OBIČAJNO, PONAVADI", ang: "USUALLY"},{slo: "POGOSTO", ang: "OFTEN"},{slo: "VČASIH", ang: "SOMETIMES"},{slo: "REDKO, TU PA TAM", ang: "RARELY"},{slo: "SKORAJ NIKOLI", ang: "HARDLY EVER"},{slo: "NIKOLI", ang: "NEVER"}],
             "What do you collect?": [{slo: "ZBIRATI", ang: "TO COLLECT"},{slo: "ZBIRKA", ang: "A COLLECTION"},{slo: "TUJINA", ang: "FOREIGN"},{slo: "100 / STO", ang: "A HUNDRED"},{slo: "ŠKATLICA Z VŽIGALICAMI", ang: "A MATCHBOX"},{slo: "ZNAMKE", ang: "STAMPS"},{slo: "PODPISI ZNANIH OSEB", ang: "AUTOGRAPHS"},{slo: "FRNIKULE", ang: "MARBLES"},{slo: "ŠKOLJKE", ang: "SHELLS"},{slo: "LUTKE", ang: "DOLLS"},{slo: "RAZGLEDNICE", ang: "POSTCARDS"},{slo: "ZNAČKE, PRIPONKE", ang: "BADGES"},{slo: "NALEPKE", ang: "STICKERS"},{slo: "KOVANCI", ang: "COINS"},{slo: "PAPIRNATI PRTIČKI", ang: "PAPER NAPKINS"},{slo: "OBESKI ZA KLJUČE", ang: "KEY RINGS"},{slo: "KEMIČNI SVINČNIKI", ang: "PENS"},{slo: "GUMBI", ang: "BUTTONS"},{slo: "SLIKE OD", ang: "PICTURES OF"}],
-"WH... questions": [{slo: "KDO?", ang: "WHO"},{slo: "KDAJ?", ang: "WHEN"},{slo: "KJE?", ang: "WHERE"},{slo: "KAJ?", ang: "WHAT"},{slo: "ČIGAV?", ang: "WHOSE"},{slo: "KDAJ?", ang: "WHEN"},{slo: "ZAKAJ?", ang: "WHY"},{slo: "KAKO?", ang: "HOW"}],
-"My daily routine": [{slo: "VSTATI", ang: "GET UP"},{slo: "OBLEČI SE", ang: "GET DRESSED"},{slo: "IMETI ZAJTRK", ang: "HAVE BREAKFAST"},{slo: "UMITI ZOBE", ang: "BRUSH MY TEETH"},{slo: "PRIPRAVITI ŠOLSKO TORBO", ang: "PACK MY SCHOOL BAG"},{slo: "ITI V ŠOLO", ang: "GO TO SCHOOL"},{slo: "IMETI KOSILO", ang: "HAVE LUNCH"},{slo: "PRITI DOMOV", ang: "GET HOME"},{slo: "DRUŽITI SE S PRIJATELJI", ang: "HANG OUT WITH FRIENDS"},{slo: "IGRATI RAČUNALNIŠKE IGRICE", ang: "PLAY COMPUTER GAMES"},{slo: "DELATI DOMAČO NALOGO", ang: "DO HOMEWORK"},{slo: "POMAGATI STARŠEM", ang: "HELP PARENTS"},{slo: "IMETI NOGOMETNI TRENING", ang: "HAVE FOOTBAL PRACTICE"},{slo: "VEČERJATI", ang: "HAVE DINNER"},{slo: "GLEDATI TV", ang: "WATCH TV"},{slo: "POSLUŠATI GLASBO", ang: "LISTEN TO MUSIC"},{slo: "BRATI KNJIGE", ang: "READ BOOKS"},{slo: "BRSKATI PO INTERNETU", ang: "SURF INTERNET"},{slo: "PISATI SPOROČILO PRIJATELJEM", ang: "TEXT FRIENDS"},{slo: "TUŠIRATI SE", ang: "HAVE A SHOWER"},{slo: "ITI V POSTELJO ZVEČER", ang: "GO TO BED IN THE EVENING"},{slo: "ITI SPAT", ang: "GO TO SLEEP"}],
-"A day in the life of Pippy S.": [{slo: "SAM/A", ang: "ALONE"},{slo: "PLEZATI", ang: "CLIMB"},{slo: "ŠTETI", ang: "COUNT"},{slo: "NI PO NJENO", ang: "DOESN'T GET HER OWN WAY"},{slo: "BITI POSEJAN S PEGAMI", ang: "DOTTED WITH FRECKLES"},{slo: "PRAVLJICA", ang: "FAIRY-TALE"},{slo: "FINE DAME", ang: "FINE LADIES"},{slo: "ZGANJATI HRUP", ang: "FUSS"},{slo: "ITI NA SPREHOD", ang: "GO FOR A WALK"},{slo: "ZLATI KOSI", ang: "GOLD PIECES"},{slo: "VOTLO DREVO", ang: "HOLLOW TREE"},{slo: "ŽENSKE SPODNJICE", ang: "KNJICKERS"},{slo: "PALAČINKE", ang: "PANCAKES"},{slo: "KITKE/REPKI", ang: "PIGTAILS"},{slo: "RDEČ KOT KORENČEK", ang: "RED AS A CARROT"},{slo: "KLOBASA", ang: "SAUSAGE"},{slo: "PREMET/SALTO", ang: "SOMERSAULT"},{slo: "ŽENSKE NOGAVICE", ang: "STOCKINGS"},{slo: "ČRTAST", ang: "STRIPED"},{slo: "IZMIŠLJEVATI SI", ang: "TELL FIBES"},{slo: "VREČI/ZALUČATI", ang: "TOSS"},{slo: "DVAKRAT DALJŠI OD", ang: "TWICE AS LONG AS"}],
-"Christmas": [{slo: "BOŽIČ", ang: "CHRISTMAS"},{slo: "BOŽIČEK", ang: "SANTA CLAUSE"},{slo: "SNEŽINKA", ang: "A SNOWFLAKE"},{slo: "SNEŽAK", ang: "A SNOWMAN"},{slo: "OMELA", ang: "A MISTLETOE"},{slo: "PIŠKOT MEDENJAK", ang: "A GINGERBREAD MAN"},{slo: "NOGAVICA", ang: "A STOCKING"},{slo: "PALČEK/ŠKRAT", ang: "AN ELF"},{slo: "PALČKI/ŠKRATKI", ang: "ELVES"},{slo: "SANI", ang: "A SLEIGH"},{slo: "SEVERNI JELEN", ang: "REINDEER"},{slo: "OKRASKI ZA SMREKO", ang: "BAUBLES"},{slo: "OKRASNI TRAKOVI", ang: "TINSELS"},{slo: "DEKORACIJA BOŽIČNA", ang: "ORNAMENTS"},{slo: "DARILO", ang: "A GIFT"}],
-"Annika and Tommy's typical day": [{slo: "PRIŽGATI RADIO", ang: "TO TURN ON THE RADIO"},{slo: "ZVONEC ZAZVONI", ang: "TO BELL RINGS"},{slo: "PREVAL/SALTA", ang: "SOMERSAULT"},{slo: "VOTLO DREVO", ang: "HOLLOW TREE"},{slo: "PRAVLJICA", ang: "FAIRY-TALE"}],
-"Anna's school play": [{slo: "ŠOLSKA PREDSTAVA", ang: "SCHOOL PLAY"},{slo: "TA URA PREHITEVA", ang: "THAT CLOCK IS FAST"},{slo: "SKORAJ", ang: "ALMOST"},{slo: "NOBEN/NOBENA", ang: "NONE"},{slo: "DOVOLJ", ang: "ENOUGH"},{slo: "MUDI SE NAM", ang: "WE ARE IN A HURRY"},{slo: "BODI PREVIDEN", ang: "BE CAREFUL"}],
-"Days of the week - se z veliko začetnico v angleščini": [{slo: "PONEDELJEK", ang: "MONDAY"},{slo: "TOREK", ang: "TUESDAY"},{slo: "SREDA", ang: "WEDNESDAY"},{slo: "ČETRTEK", ang: "THURSDAY"},{slo: "PETEK", ang: "FRIDAY"},{slo: "SOBOTA", ang: "SATURDAY"},{slo: "NEDELJA", ang: "SUNDAY"}],
-"Months of the year - pišejo se z veliko začetnico v angleščini": [{slo: "JANUAR", ang: "January"},{slo: "FEBRUAR", ang: "February"},{slo: "MAREC", ang: "March"},{slo: "APRIL", ang: "April"},{slo: "MAJ", ang: "May"},{slo: "JUNIJ", ang: "June"},{slo: "JULIJ", ang: "July"},{slo: "AVGUST", ang: "August"},{slo: "SEPTEMBER", ang: "September"},{slo: "OKTOBER", ang: "October"},{slo: "NOVEMBER", ang: "November"},{slo: "DECEMBER", ang: "December"}],
-"Seasons of the year": [{slo: "POMLAD", ang: "SPRING"},{slo: "POLETJE", ang: "SUMMER"},{slo: "JESEN", ang: "AUTUMN"},{slo: "ZIMA", ang: "WINTER"}],
-"School subjects": [{slo: "SLJ", ang: "SLOVENE"},{slo: "MAT", ang: "MATHS"},{slo: "TJA", ang: "ENGLISH"},{slo: "GEO", ang: "GEOGRAPHY"},{slo: "ZGO", ang: "HISTORY"},{slo: "NAR", ang: "SCIENCE"},{slo: "ŠPO", ang: "PHISICAL EDUCATION"},{slo: "GUM", ang: "MUSIC"},{slo: "LUM", ang: "ART"},{slo: "GOS", ang: "HOME ECONOMICS"},{slo: "KEM", ang: "CHEMISTRY"},{slo: "FIZ", ang: "PHYSICS"},{slo: "OBLIKOVANJE IN TEHNIKA", ang: "DESIGN AND TECHNOLOGY"},{slo: "BIO", ang: "BIOLOGY"},{slo: "NEM", ang: "GERMAN"},{slo: "ŠPA", ang: "SPANISH"},{slo: "ITA", ang: "ITALIAN"},{slo: "FRA", ang: "FRENCH"},{slo: "RAČ", ang: "INFORMATION AND COMMUNICATIONS TECHNOLOGY"},{slo: "VEROUK", ang: "RELIGIOUS EDUCATION"}],
-            "Dodatno": [{slo: "OBIČAJNE STVARI", ang: "USUAL THINGS"},{slo: "NEOBIČAJNE STVARI", ang: "UNUSUAL THINGS"},{slo: "PISALNI STROJ", ang: "TYPEWRITER"},{slo: "FLIPERJI", ang: "PINBALL MACHINES"},{slo: "FIGURICE PRAŠIČKOV", ang: "PIG FIGURINES"},{slo: "VRTNI PALČKI", ang: "GARDEN GNOMES"},{slo: "ZA OKRAS", ang: "FOR DECORATION"},{slo: "PRIJETNEŠI PROSTOR", ang: "A MORE ENJOYABLE PLACE"},{slo: "SPRAVIJO TE V DOBRO VOLJO", ang: "THEY PUT YOU IN A GOOD MOOD"},{slo: "PRINAŠAJO SREČO", ang: "THEY BRING GOOD LUCK"},{slo: "VARUJEJO TVOJ VRT", ang: "THEY PROTECT YOUR GARDEN"},{slo: "MOŠKI", ang: "MALE"},{slo: "ŽENSKA", ang: "FEMALE"},{slo: "BRADA", ang: "BEARD"},{slo: "NOSIJO RDEČE ŠPIČASTE KLOBUKE", ang: "THEY WEAR RED POINTY HATS"},{slo: "DREMAJO POD DREVESOM", ang: "THEY NAP UNDER A TREE"},{slo: "PRIJETNE IN NEPRIJETNE SANJE", ang: "PLEASANT ANDBAD DREAMS"},{slo: "NOČNA MORA", ang: "NIGHTMARE"},{slo: "ZNOVA IN ZNOVA", ang: "AGAIN AND AGAIN"},{slo: "PEKOČE KOPRIVE", ang: "STINGING NETTLES"},{slo: "PRVO BERILO / ČITANKA", ang: "PRIMER"},{slo: "PREVODI V RAZLIČNE JEZIKE", ang: "TRANSLATIONS INTO DIFFERENT LANGUAGES"},{slo: "ŠE ZLASTI, ŠE POSEBEJ", ang: "ESPECIALLY"}]
+            "WH... questions": [{slo: "KDO?", ang: "WHO"},{slo: "KJE?", ang: "WHERE"},{slo: "KAJ?", ang: "WHAT"},{slo: "ČIGAV?", ang: "WHOSE"},{slo: "KDAJ?", ang: "WHEN"},{slo: "ZAKAJ?", ang: "WHY"},{slo: "KAKO?", ang: "HOW"}],
+            "My daily routine": [{slo: "VSTATI", ang: "GET UP"},{slo: "OBLEČI SE", ang: "GET DRESSED"},{slo: "IMETI ZAJTRK", ang: "HAVE BREAKFAST"},{slo: "UMITI ZOBE", ang: "BRUSH MY TEETH"},{slo: "PRIPRAVITI ŠOLSKO TORBO", ang: "PACK MY SCHOOL BAG"},{slo: "ITI V ŠOLO", ang: "GO TO SCHOOL"},{slo: "IMETI KOSILO", ang: "HAVE LUNCH"},{slo: "PRITI DOMOV", ang: "GET HOME"},{slo: "DRUŽITI SE S PRIJATELJI", ang: "HANG OUT WITH FRIENDS"},{slo: "IGRATI RAČUNALNIŠKE IGRICE", ang: "PLAY COMPUTER GAMES"},{slo: "DELATI DOMAČO NALOGO", ang: "DO HOMEWORK"},{slo: "POMAGATI STARŠEM", ang: "HELP PARENTS"},{slo: "IMETI NOGOMETNI TRENING", ang: "HAVE FOOTBALL PRACTICE"},{slo: "VEČERJATI", ang: "HAVE DINNER"},{slo: "GLEDATI TV", ang: "WATCH TV"},{slo: "POSLUŠATI GLASBO", ang: "LISTEN TO MUSIC"},{slo: "BRATI KNJIGE", ang: "READ BOOKS"},{slo: "BRSKATI PO INTERNETU", ang: "SURF THE INTERNET"},{slo: "PISATI SPOROČILO PRIJATELJEM", ang: "TEXT FRIENDS"},{slo: "TUŠIRATI SE", ang: "HAVE A SHOWER"},{slo: "ITI V POSTELJO ZVEČER", ang: "GO TO BED IN THE EVENING"},{slo: "ITI SPAT", ang: "GO TO SLEEP"}],
+            "A day in the life of Pippy S.": [{slo: "SAM/A", ang: "ALONE"},{slo: "PLEZATI", ang: "CLIMB"},{slo: "ŠTETI", ang: "COUNT"},{slo: "NI PO NJENO", ang: "DOESN'T GET HER OWN WAY"},{slo: "BITI POSEJAN S PEGAMI", ang: "DOTTED WITH FRECKLES"},{slo: "PRAVLJICA", ang: "A FAIRY-TALE"},{slo: "FINE DAME", ang: "FINE LADIES"},{slo: "ZGANJATI HRUP", ang: "FUSS"},{slo: "ITI NA SPREHOD", ang: "GO FOR A WALK"},{slo: "ZLATI KOSI", ang: "GOLD PIECES"},{slo: "VOTLO DREVO", ang: "A HOLLOW TREE"},{slo: "ŽENSKE SPODNJICE", ang: "KNICKERS"},{slo: "PALAČINKE", ang: "PANCAKES"},{slo: "KITKE/REPKI", ang: "PIGTAILS"},{slo: "RDEČ KOT KORENČEK", ang: "RED AS A CARROT"},{slo: "KLOBASA", ang: "A SAUSAGE"},{slo: "PREMET/SALTO", ang: "A SOMERSAULT"},{slo: "ŽENSKE NOGAVICE", ang: "STOCKINGS"},{slo: "ČRTAST", ang: "STRIPED"},{slo: "IZMIŠLJEVATI SI", ang: "TELL FIBS"},{slo: "VREČI/ZALUČATI", ang: "TOSS"},{slo: "DVAKRAT DALJŠI OD", ang: "TWICE AS LONG AS"}],
+            "Christmas": [{slo: "BOŽIČ", ang: "CHRISTMAS"},{slo: "BOŽIČEK", ang: "SANTA CLAUS"},{slo: "SNEŽINKA", ang: "A SNOWFLAKE"},{slo: "SNEŽAK", ang: "A SNOWMAN"},{slo: "OMELA", ang: "A MISTLETOE"},{slo: "PIŠKOT MEDENJAK", ang: "A GINGERBREAD MAN"},{slo: "NOGAVICA", ang: "A STOCKING"},{slo: "PALČEK/ŠKRAT", ang: "AN ELF"},{slo: "PALČKI/ŠKRATKI", ang: "ELVES"},{slo: "SANI", ang: "A SLEIGH"},{slo: "SEVERNI JELEN", ang: "A REINDEER"},{slo: "OKRASKI ZA SMREKO", ang: "BAUBLES"},{slo: "OKRASNI TRAKOVI", ang: "TINSELS"},{slo: "DEKORACIJA BOŽIČNA", ang: "ORNAMENTS"},{slo: "DARILO", ang: "A GIFT"}],
+            "Annika and Tommy's typical day": [{slo: "PRIŽGATI RADIO", ang: "TO TURN ON THE RADIO"},{slo: "ZVONEC ZAZVONI", ang: "THE BELL RINGS"},{slo: "PREVAL/SALTA", ang: "A SOMERSAULT"},{slo: "VOTLO DREVO", ang: "A HOLLOW TREE"},{slo: "PRAVLJICA", ang: "A FAIRY-TALE"}],
+            "Anna's school play": [{slo: "ŠOLSKA PREDSTAVA", ang: "A SCHOOL PLAY"},{slo: "TA URA PREHITEVA", ang: "THAT CLOCK IS FAST"},{slo: "SKORAJ", ang: "ALMOST"},{slo: "NOBEN/NOBENA", ang: "NONE"},{slo: "DOVOLJ", ang: "ENOUGH"},{slo: "MUDI SE NAM", ang: "WE ARE IN A HURRY"},{slo: "BODI PREVIDEN", ang: "BE CAREFUL"}],
+            "Days of the week - se z veliko začetnico v angleščini": [{slo: "PONEDELJEK", ang: "MONDAY"},{slo: "TOREK", ang: "TUESDAY"},{slo: "SREDA", ang: "WEDNESDAY"},{slo: "ČETRTEK", ang: "THURSDAY"},{slo: "PETEK", ang: "FRIDAY"},{slo: "SOBOTA", ang: "SATURDAY"},{slo: "NEDELJA", ang: "SUNDAY"}],
+            "Months of the year - pišejo se z veliko začetnico v angleščini": [{slo: "JANUAR", ang: "January"},{slo: "FEBRUAR", ang: "February"},{slo: "MAREC", ang: "March"},{slo: "APRIL", ang: "April"},{slo: "MAJ", ang: "May"},{slo: "JUNIJ", ang: "June"},{slo: "JULIJ", ang: "July"},{slo: "AVGUST", ang: "August"},{slo: "SEPTEMBER", ang: "September"},{slo: "OKTOBER", ang: "October"},{slo: "NOVEMBER", ang: "November"},{slo: "DECEMBER", ang: "December"}],
+            "Seasons of the year": [{slo: "POMLAD", ang: "SPRING"},{slo: "POLETJE", ang: "SUMMER"},{slo: "JESEN", ang: "AUTUMN"},{slo: "ZIMA", ang: "WINTER"}],
+            "School subjects": [{slo: "SLJ", ang: "SLOVENE"},{slo: "MAT", ang: "MATHS"},{slo: "TJA", ang: "ENGLISH"},{slo: "GEO", ang: "GEOGRAPHY"},{slo: "ZGO", ang: "HISTORY"},{slo: "NAR", ang: "SCIENCE"},{slo: "ŠPO", ang: "PHYSICAL EDUCATION"},{slo: "GUM", ang: "MUSIC"},{slo: "LUM", ang: "ART"},{slo: "GOS", ang: "HOME ECONOMICS"},{slo: "KEM", ang: "CHEMISTRY"},{slo: "FIZ", ang: "PHYSICS"},{slo: "OBLIKOVANJE IN TEHNIKA", ang: "DESIGN AND TECHNOLOGY"},{slo: "BIO", ang: "BIOLOGY"},{slo: "NEM", ang: "GERMAN"},{slo: "ŠPA", ang: "SPANISH"},{slo: "ITA", ang: "ITALIAN"},{slo: "FRA", ang: "FRENCH"},{slo: "RAČ", ang: "INFORMATION AND COMMUNICATIONS TECHNOLOGY"},{slo: "VEROUK", ang: "RELIGIOUS EDUCATION"}],
+            "Dodatno": [{slo: "OBIČAJNE STVARI", ang: "USUAL THINGS"},{slo: "NEOBIČAJNE STVARI", ang: "UNUSUAL THINGS"},{slo: "PISALNI STROJ", ang: "A TYPEWRITER"},{slo: "FLIPERJI", ang: "PINBALL MACHINES"},{slo: "FIGURICE PRAŠIČKOV", ang: "PIG FIGURINES"},{slo: "VRTNI PALČKI", ang: "GARDEN GNOMES"},{slo: "ZA OKRAS", ang: "FOR DECORATION"},{slo: "PRIJETNEŠI PROSTOR", ang: "A MORE ENJOYABLE PLACE"},{slo: "SPRAVIJO TE V DOBRO VOLJO", ang: "THEY PUT YOU IN A GOOD MOOD"},{slo: "PRINAŠAJO SREČO", ang: "THEY BRING GOOD LUCK"},{slo: "VARUJEJO TVOJ VRT", ang: "THEY PROTECT YOUR GARDEN"},{slo: "MOŠKI", ang: "A MALE"},{slo: "ŽENSKA", ang: "A FEMALE"},{slo: "BRADA", ang: "A BEARD"},{slo: "NOSIJO RDEČE ŠPIČASTE KLOBUKE", ang: "THEY WEAR RED POINTY HATS"},{slo: "DREMAJO POD DREVESOM", ang: "THEY NAP UNDER A TREE"},{slo: "PRIJETNE IN NEPRIJETNE SANJE", ang: "PLEASANT AND BAD DREAMS"},{slo: "NOČNA MORA", ang: "A NIGHTMARE"},{slo: "ZNOVA IN ZNOVA", ang: "AGAIN AND AGAIN"},{slo: "PEKOČE KOPRIVE", ang: "STINGING NETTLES"},{slo: "PRVO BERILO / ČITANKA", ang: "A PRIMER"},{slo: "PREVODI V RAZLIČNE JEZIKE", ang: "TRANSLATIONS INTO DIFFERENT LANGUAGES"},{slo: "ŠE ZLASTI, ŠE POSEBEJ", ang: "ESPECIALLY"}]
         };
 
         function ustvariPosebneSklope() {
             let vse = [];
             for (let sklop in osnovniPodatki) {
-                vse = vse.concat(osnovniPodatki[sklop]);
+                if(sklop !== "VSE BESEDE") vse = vse.concat(osnovniPodatki[sklop]);
             }
-            osnovniPodatki["VSE BESEDE"] = vse.filter((v, i, a) => a.findIndex(t => t.slo === v.slo) === i);
+            osnovniPodatki["VSE BESEDE"] = vse.filter((v, i, a) => a.findIndex(t => t.ang.toLowerCase().trim() === v.ang.toLowerCase().trim()) === i);
         }
 
         let trenutniSklopIme = "";
@@ -143,16 +131,17 @@
             for (let sklop in osnovniPodatki) {
                 let skupaj = osnovniPodatki[sklop].length;
                 let podatki = zgodovina[sklop] || { nauceno: [], napake: [] };
-                let stNaučenih = (podatki.nauceno || []).length;
+                let stNaučenih = osnovniPodatki[sklop].filter(b => (podatki.nauceno || []).includes(b.ang.toLowerCase().trim())).length;
                 let procent = Math.round((stNaučenih / skupaj) * 100) || 0;
                 
                 let div = document.createElement("div");
                 div.className = "sklop-vsebnik";
+                // TU JE POPRAVEK ZA NAREKOVAJ (uporaba backtickov ` v pripraviSklop in ponastaviSklop)
                 div.innerHTML = `
-    <button onclick="pripraviSklop(\`${sklop}\`)" style="background-color: ${sklop === 'VSE BESEDE' ? '#2c3e50' : '#3498db'}; color: white; width:100%; padding:12px; border-radius:8px; border:none; font-weight:bold; cursor:pointer; font-size:1.1em;">${sklop}</button>
-    <div class="statistika-tekst">Znaš: <span class="oznaka-ok">${stNaučenih}/${skupaj} (${procent}%)</span> | Napake: <span class="oznaka-napaka">${(podatki.napake || []).length}</span></div>
-    <div class="progres-bar"><div class="progres-polnilo" style="width: ${procent}%"></div></div>
-    <button class="btn-reset" onclick="ponastaviSklop(\`${sklop}\`)">Ponastavi</button>
+                    <button onclick="pripraviSklop(\`${sklop}\`)" style="background-color: ${sklop === 'VSE BESEDE' ? '#2c3e50' : '#3498db'}; color: white; width:100%; padding:12px; border-radius:8px; border:none; font-weight:bold; cursor:pointer; font-size:1.1em;">${sklop}</button>
+                    <div class="statistika-tekst">Znaš: <span class="oznaka-ok">${stNaučenih}/${skupaj} (${procent}%)</span> | Napake: <span class="oznaka-napaka">${(podatki.napake || []).length}</span></div>
+                    <div class="progres-bar"><div class="progres-polnilo" style="width: ${procent}%"></div></div>
+                    <button class="btn-reset" onclick="ponastaviSklop(\`${sklop}\`)">Ponastavi</button>
                 `;
                 meni.appendChild(div);
             }
@@ -170,7 +159,6 @@
         function preveri() {
             let vnos = document.getElementById("vnos").value.toLowerCase().trim();
             let pravilna = trenutneBesede[indeks].ang.toLowerCase().trim();
-            let slovenska = trenutneBesede[indeks].slo;
             let zgodovina = JSON.parse(localStorage.getItem('anglescina_v3_progres')) || {};
             
             if (!zgodovina[trenutniSklopIme]) zgodovina[trenutniSklopIme] = { nauceno: [], napake: [] };
@@ -178,18 +166,18 @@
             let msg = document.getElementById("sporocilo");
             if (vnos === pravilna) {
                 tockeSeje++; zaporedniPravilni++;
-                if (!zgodovina[trenutniSklopIme].nauceno.includes(slovenska)) {
-                    zgodovina[trenutniSklopIme].nauceno.push(slovenska);
+                if (!zgodovina[trenutniSklopIme].nauceno.includes(pravilna)) {
+                    zgodovina[trenutniSklopIme].nauceno.push(pravilna);
                 }
-                zgodovina[trenutniSklopIme].napake = zgodovina[trenutniSklopIme].napake.filter(b => b.slo !== slovenska);
+                zgodovina[trenutniSklopIme].napake = zgodovina[trenutniSklopIme].napake.filter(b => b.ang.toLowerCase().trim() !== pravilna);
                 msg.innerHTML = `<span class='oznaka-ok'>Bravo! ✅</span>`;
                 if (zaporedniPravilni % 3 === 0) {
                     msg.innerHTML += `<br><span class="pohvala-tekst">${pohvale[Math.floor(Math.random() * pohvale.length)]}</span>`;
                 }
             } else {
                 zaporedniPravilni = 0;
-                zgodovina[trenutniSklopIme].nauceno = zgodovina[trenutniSklopIme].nauceno.filter(s => s !== slovenska);
-                if (!zgodovina[trenutniSklopIme].napake.find(b => b.slo === slovenska)) {
+                zgodovina[trenutniSklopIme].nauceno = zgodovina[trenutniSklopIme].nauceno.filter(s => s !== pravilna);
+                if (!zgodovina[trenutniSklopIme].napake.find(b => b.ang.toLowerCase().trim() === pravilna)) {
                     zgodovina[trenutniSklopIme].napake.push(trenutneBesede[indeks]);
                 }
                 msg.innerHTML = `<span class='oznaka-napaka'>Pravilno: ${pravilna.toUpperCase()}</span>`;
@@ -198,14 +186,17 @@
             localStorage.setItem('anglescina_v3_progres', JSON.stringify(zgodovina));
             setTimeout(() => {
                 indeks++;
-                if (indeks < trenutneBesede.length) osveziPrikaz();
-                else prikažiKonec();
+                if (indeks < trenutneBesede.length) {
+                    osveziPrikaz();
+                } else {
+                    osveziMeni();
+                    prikažiKonec();
+                }
             }, 1800);
         }
 
         function prikaziNamig() {
             const beseda = trenutneBesede[indeks].ang;
-            // Če še nismo dodali nobene črke, dodamo prvo naključno
             if (razkritiIndeksi.length < beseda.replace(/ /g, "").length) {
                 let mozne = [];
                 for (let i = 0; i < beseda.length; i++) {
@@ -215,11 +206,9 @@
                     razkritiIndeksi.push(mozne[Math.floor(Math.random() * mozne.length)]);
                 }
             }
-
             let izpis = "";
             for (let i = 0; i < beseda.length; i++) {
                 if (beseda[i] === " ") {
-                    // Tukaj določimo izgled praznega prostora - tri pike
                     izpis += `<span class="lovec-besed"> . . . </span>`;
                 } else {
                     izpis += razkritiIndeksi.includes(i) ? beseda[i].toUpperCase() : "_";
@@ -229,20 +218,23 @@
         }
 
         function preskoci() {
-            document.getElementById("sporocilo").innerHTML = `Rešitev: ${trenutneBesede[indeks].ang.toUpperCase()}`;
+            let pravilna = trenutneBesede[indeks].ang.toLowerCase().trim();
+            document.getElementById("sporocilo").innerHTML = `Rešitev: ${pravilna.toUpperCase()}`;
             zaporedniPravilni = 0;
-            let slovenska = trenutneBesede[indeks].slo;
             let zgodovina = JSON.parse(localStorage.getItem('anglescina_v3_progres')) || {};
             if (!zgodovina[trenutniSklopIme]) zgodovina[trenutniSklopIme] = { nauceno: [], napake: [] };
-            zgodovina[trenutniSklopIme].nauceno = zgodovina[trenutniSklopIme].nauceno.filter(s => s !== slovenska);
-            if (!zgodovina[trenutniSklopIme].napake.find(b => b.slo === slovenska)) {
+            zgodovina[trenutniSklopIme].nauceno = zgodovina[trenutniSklopIme].nauceno.filter(s => s !== pravilna);
+            if (!zgodovina[trenutniSklopIme].napake.find(b => b.ang.toLowerCase().trim() === pravilna)) {
                 zgodovina[trenutniSklopIme].napake.push(trenutneBesede[indeks]);
             }
             localStorage.setItem('anglescina_v3_progres', JSON.stringify(zgodovina));
             setTimeout(() => {
                 indeks++;
                 if (indeks < trenutneBesede.length) osveziPrikaz();
-                else prikažiKonec();
+                else {
+                    osveziMeni();
+                    prikažiKonec();
+                }
             }, 1800);
         }
 
@@ -296,4 +288,3 @@
     </script>
 </body>
 </html>
-
